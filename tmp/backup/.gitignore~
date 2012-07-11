@@ -1,0 +1,9 @@
+/search-results-spy/target/
+/search-results-spy/nbactions.xml
+/mail-utils/target/
+/mail-utils/nb-configuration.xml
+*/.project
+*/.pydevproject
+*/.settings/
+
+
