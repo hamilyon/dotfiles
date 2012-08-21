@@ -707,10 +707,10 @@ augroup END
 " }}}
 " Haskell {{{
 
-augroup ft_haskell
-    au!
-    au BufEnter *.hs compiler ghc
-augroup END
+"augroup ft_haskell
+"    au!
+"    au BufEnter *.hs compiler ghc
+"augroup END
 
 " }}}
 " HTML and HTMLDjango {{{
