@@ -418,7 +418,7 @@ set virtualedit+=block
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 runtime macros/matchit.vim
-map <tab> %
+" map <tab> % " I need my ctrl+I badly
 
 " Made D behave
 nnoremap D d$
@@ -1719,6 +1719,10 @@ endif
 set number
 nnoremap <F6> :set number <CR>
 nnoremap <S-F6> :set nonumber <CR>
+
+"unmap <C-PageDown>
+"unmap <C-PageUp>
+
 nnoremap <C-l> :tabn<CR>
 nnoremap <C-h> :tabp<CR>
 
@@ -1813,4 +1817,11 @@ if !exists('upAndDown_enable')
 
         let g:upAndDown_enable = 1
 endif
+" }}}
+" Map arrows till I forget what they do 
+" {{{
+map <Down> <Nop>
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
 " }}}
