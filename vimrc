@@ -265,7 +265,7 @@ nnoremap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 " vnoremap <leader>UG :w !gist -p \| pbcopy<cr>
 
 " Send visual selection to paste.stevelosh.com
-vnoremap <c-p> :w !curl -sF 'sprunge=<-' 'http://paste.stevelosh.com' \| tr -d '\n ' \| pbcopy && open `pbpaste`<cr>
+"vnoremap <c-p> :w !curl -sF 'sprunge=<-' 'http://paste.stevelosh.com' \| tr -d '\n ' \| pbcopy && open `pbpaste`<cr>
 
 " Insert the directory of the current buffer in command line mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -549,6 +549,11 @@ set foldtext=MyFoldText()
 
 " }}}
 " Filetype-specific ------------------------------------------------------- {{{
+" Python {{{
+augroup ft_py
+    set foldmethod=indent
+augroup END
+" }}}
 
 " C {{{
 
@@ -1717,14 +1722,22 @@ endif
 " }}}
 
 set number
+
+" for easy copy and pasting (I do it a lot)
+set paste
 nnoremap <F6> :set number <CR>
 nnoremap <S-F6> :set nonumber <CR>
 
 "unmap <C-PageDown>
 "unmap <C-PageUp>
 
+" easy switch tabs
 nnoremap <C-l> :tabn<CR>
 nnoremap <C-h> :tabp<CR>
+" I miss C-n frequently
+map <C-m> <Nop>
+" most of the time i need to fire python on current file
+map <F9> :!python %<CR>
 
 "=============================================================================
 " upAndDown line moving script ------------------------------------------- {{{
@@ -1824,4 +1837,8 @@ map <Down> <Nop>
 map <Up> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
+" }}}
+
+" Ctags ------------------------------------------------------------------ {{{
+set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags 
 " }}}
