@@ -21,7 +21,8 @@
         set background=dark     " Assume a dark background
         if has ("unix") && "Darwin" != system("echo -n \"$(uname)\"")
           " on Linux use + register for copy-paste
-          set clipboard=unnamedplus
+          " not supported yet in 7.3
+          " set clipboard=unnamedplus
         else
           " one mac and windows, use * register for copy-paste
           set clipboard=unnamed
