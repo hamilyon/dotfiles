@@ -1,0 +1,129 @@
+colorscheme badwolf
+
+set number
+
+" for easy copy and pasting (I do it a lot)
+set paste
+nnoremap <F6> :set number <CR>
+nnoremap <S-F6> :set nonumber <CR>
+
+"unmap <C-PageDown>
+"unmap <C-PageUp>
+
+" easy switch tabs
+nnoremap <C-l> :tabn<CR>
+nnoremap <C-h> :tabp<CR>
+" I miss C-n frequently
+map <C-m> <Nop>
+" most of the time i need to fire python on current file
+map <F9> :!python %<CR>
+" fix some misconceptions
+unmap L
+unmap H
+
+
+"=============================================================================
+" upAndDown line moving script ------------------------------------------- {{{
+" Author:      Frédéric Hardy (fhardy at noparking.net)
+" Last Change: Wed Mar 18 11:38:45 CET 2009
+" Licence:     GPL version 2.0 license
+" GetLatestVimScripts: 2586 10240 :AutoInstall: upAndDown.vim
+"=============================================================================
+if !exists('upAndDown_enable')
+        let s:keepCpo= &cpo
+        setlocal cpo&vim
+
+        if !hasmapto('<Plug>upAndDownUp')
+                nmap  <silent> <C-k> <Plug>upAndDownUp
+        endif
+
+        nnoremap  <script> <Plug>upAndDownUp <SID>moveUp
+        nnoremap <SID>moveUp :<C-u>call <SID>moveUp()<CR>
+
+        if !hasmapto('<Plug>upAndDownDown')
+                nmap  <silent> <C-j> <Plug>upAndDownDown
+        endif
+
+        nnoremap  <script> <Plug>upAndDownDown <SID>moveDown
+        nnoremap <SID>moveDown :<C-u>call <SID>moveDown()<CR>
+
+        if !hasmapto('<Plug>upAndDownInsertUp')
+                imap  <silent> <C-k> <Plug>upAndDownInsertUp
+        endif
+
+        inoremap  <script> <Plug>upAndDownInsertUp <SID>moveInsertUp
+        inoremap <SID>moveInsertUp <C-o>:<C-u>call <SID>moveUp()<CR>
+
+        if !hasmapto('<Plug>upAndDownInsertDown')
+                imap  <silent> <C-j> <Plug>upAndDownInsertDown
+        endif
+
+        inoremap  <script> <Plug>upAndDownInsertDown <SID>moveInsertDown
+        inoremap <SID>moveInsertDown <C-o>:<C-u>call <SID>moveDown()<CR>
+
+        if !hasmapto('<Plug>upAndDownVisualUp')
+                vmap  <silent> <C-k> <Plug>upAndDownVisualUp
+        endif
+
+        vnoremap  <script> <Plug>upAndDownVisualUp <SID>moveVisualUp
+        vnoremap <SID>moveVisualUp :<C-u>call <SID>moveVisualUp()<CR>
+
+        if !hasmapto('<Plug>upAndDownVisualDown')
+                vmap  <silent> <C-j> <Plug>upAndDownVisualDown
+        endif
+
+        vnoremap  <script> <Plug>upAndDownVisualDown <SID>moveVisualDown
+        vnoremap <SID>moveVisualDown :<C-u>call <SID>moveVisualDown()<CR>
+
+        function s:moveUp()
+                call s:moveUpWithArgs(".", "")
+        endfunction
+
+        function s:moveDown()
+                call s:moveDownWithArgs(".", "")
+        endfunction
+
+        function s:moveVisualUp()
+                echomsg 'UP'
+                call s:moveUpWithArgs("'<", "'<,'>")
+                normal gv
+        endfunction
+
+        function s:moveVisualDown()
+                call s:moveDownWithArgs("'>", "'<,'>")
+                normal gv
+        endfunction
+
+        function s:moveUpWithArgs(line, range)
+                call s:move(a:range . 'move ' . (line(a:line) - v:count1 - 1 < 0 ? '0' : a:line . ' -' . (v:count1 + 1)))
+        endfunction
+
+        function s:moveDownWithArgs(line, range)
+                call s:move(a:range . 'move ' . (line(a:line) + v:count1 > line('$') ? '$' : a:line . ' +' . v:count1))
+        endfunction
+
+        function s:move(arg)
+                let column = virtcol('.')
+                execute 'silent! ' . a:arg
+                execute 'normal! ' . column . '|'
+        endfunction
+
+        let &cpo= s:keepCpo
+        unlet s:keepCpo
+
+        let g:upAndDown_enable = 1
+endif
+" }}}
+" Map arrows till I forget what they do 
+" {{{
+map <Down> <Nop>
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+" }}}
+
+" Ctags ------------------------------------------------------------------ {{{
+set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags 
+" }}}
+
+
