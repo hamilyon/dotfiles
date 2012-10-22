@@ -1,4 +1,3 @@
-colorscheme badwolf
 
 set number
 
@@ -20,6 +19,11 @@ map <F9> :!python %<CR>
 " fix some misconceptions
 unmap L
 unmap H
+
+noremap H ^
+noremap L $
+vnoremap L g_
+
 
 
 "=============================================================================
@@ -126,4 +130,8 @@ map <Right> <Nop>
 set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags 
 " }}}
 
+
+syntax enable
+set background=dark
+colorscheme solarized
 
