@@ -129,6 +129,13 @@ map <Right> <Nop>
 " Ctags ------------------------------------------------------------------ {{{
 set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags 
 " }}}
+unlet g:ctrlp_custom_ignore
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(class|so)$',
+  \ 'build': '\v[\/](build|target)$'
+  \ }
+let g:ctrlp_max_files = 40000
 
 
 syntax enable
