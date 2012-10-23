@@ -131,9 +131,8 @@ set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags
 " }}}
 unlet g:ctrlp_custom_ignore
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(class|so)$',
-  \ 'build': '\v[\/](build|target)$'
+  \ 'dir':  '\v([\/]\.(git|hg|svn))|(build|target|debian)$',
+  \ 'file': '\v\.(class|so)$'
   \ }
 let g:ctrlp_max_files = 40000
 
