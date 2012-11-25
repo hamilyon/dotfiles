@@ -1,0 +1,6 @@
+let g:spf13_no_autochdir = 1
+
+cnoremap w!! w !sudo tee % >/dev/null
+
+set nospell
+
