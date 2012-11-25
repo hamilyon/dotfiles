@@ -12,10 +12,12 @@ nnoremap <S-F6> :set nonumber <CR>
 " easy switch tabs
 nnoremap <C-l> :tabn<CR>
 nnoremap <C-h> :tabp<CR>
-" I miss C-n frequently
-map <C-m> <Nop>
+
+map <F2> :NERDTreeToggle<CR>
 " most of the time i need to fire python on current file
 map <F9> :!python %<CR>
+map <F8> :!db < % <tab> less
+
 " fix some misconceptions
 unmap L
 unmap H
@@ -118,16 +120,22 @@ if !exists('upAndDown_enable')
         let g:upAndDown_enable = 1
 endif
 " }}}
-" Map arrows till I forget what they do 
+" Map arrows till I forget what they do
 " {{{
 map <Down> <Nop>
 map <Up> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
+
+"imap <Down> <Nop>
+"imap <Up> <Nop>
+"imap <Left> <Nop>
+"imap <Right> <Nop>
+
 " }}}
 
 " Ctags ------------------------------------------------------------------ {{{
-set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags 
+set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags
 " }}}
 unlet g:ctrlp_custom_ignore
 let g:ctrlp_custom_ignore = {
@@ -140,4 +148,13 @@ let g:ctrlp_max_files = 40000
 syntax enable
 set background=dark
 colorscheme solarized
+
+" search current word with ack
+nnoremap <C-S-F8> :Ack! '\b<c-r><c-w>\b'<CR>
+
+" fuck F1
+noremap  <F1> :set invfullscreen<CR>
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+
+
 
