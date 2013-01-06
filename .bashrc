@@ -146,3 +146,6 @@ alias gvim=gv
 alias g=git
 alias ggs='git status'
 alias ggc='git commit'
+
+export PATH="$PWD/cabal-dev/bin:$HOME/.cabal/bin:$PATH"
+
