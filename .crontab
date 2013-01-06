@@ -1,0 +1,2 @@
+#  m h  dom mon dow   command
+*/10 *  *   *   1-5   find ~/re/ -name "*.py" -not -iregex '.*build.*' -not -iregex '.*target.*' -not -iregex '.*debian.*' -or -name "*.java" | xargs -n40000 ctags -f ~/re/new_tags --append=yes 2>/dev/null && cp ~/re/tags ~/re/tags~ && if [ `wc -l ~/re/new_tags | awk '{print $1}'` < 30 ]; then `exit 7`; fi && mv ~/re/new_tags ~/re/tags && rm ~/re/tags~
