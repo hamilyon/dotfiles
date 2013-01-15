@@ -19,7 +19,7 @@ nnoremap <C-h> :tabp<CR>
 map <F2> :NERDTreeToggle<CR>
 " most of the time i need to fire python on current file
 map <F9> :!python %<CR>
-map <F8> :!db < % <tab> less
+map <F8> :!db < % <Bar> less
 
 " fix some misconceptions
 unmap L
@@ -158,6 +158,13 @@ nnoremap <C-S-F8> :Ack! '\b<c-r><c-w>\b'<CR>
 " fuck F1
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
+
+" make neocomplecache sane
+let g:neocomplcache_enable_insert_char_pre = 1
+"let g:neocomplcache_auto_completion_start_length = 1000
+let g:neocomplcache_manual_completion_start_length = 2
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_disable_auto_complete = 1
 
 
 
