@@ -132,6 +132,7 @@
             Bundle 'python.vim'
             Bundle 'python_match.vim'
             Bundle 'pythoncomplete'
+            Bundle 'VimPdb'
         endif
 
     " Javascript
