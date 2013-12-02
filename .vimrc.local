@@ -1,3 +1,5 @@
+UnBundle 'vim-autoclose'
+UnBundle 'VimPdb'
 
 nnoremap <Space> za
 vnoremap <Space> za
@@ -165,6 +167,7 @@ let g:neocomplcache_enable_insert_char_pre = 1
 let g:neocomplcache_manual_completion_start_length = 2
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_disable_auto_complete = 1
+let g:airline_powerline_fonts = 1
 
 
 
