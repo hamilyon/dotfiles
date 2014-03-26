@@ -4,3 +4,4 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 set nospell
 
+Bundle 'AndrewRadev/switch.vim'

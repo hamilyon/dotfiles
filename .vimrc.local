@@ -1,4 +1,4 @@
-UnBundle 'vim-autoclose'
+UnBundle 'spf13/vim-autoclose'
 UnBundle 'VimPdb'
 
 nnoremap <Space> za
@@ -144,8 +144,8 @@ set tags=~/re/tags,./tags,./TAGS,tags,TAGS,~/.vimtags
 " }}}
 unlet g:ctrlp_custom_ignore
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v([\/]\.(git|hg|svn))|(build|target|debian)$',
-  \ 'file': '\v\.(class|so)$'
+  \ 'dir':  '\v([\/]\.(git|hg|svn))|(build|target|debian)$|^\.',
+  \ 'file': '\v\.(class|so|pyc|pyo)$'
   \ }
 let g:ctrlp_max_files = 40000
 
@@ -169,5 +169,14 @@ let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:airline_powerline_fonts = 1
 
+let g:airline_section_c = "%-.100F"
+
+let g:pymode_lint_checkers = ['pylint']
 
 
+if has ('x') && has ('gui') " fix annoying X11 behavior
+    set clipboard=
+endif
+
+nnoremap - :Switch<cr>
+map <C-F2> :NERDTreeFind<cr>

@@ -473,7 +473,7 @@
         nnoremap <silent> <D-t> :CtrlP<CR>
         nnoremap <silent> <D-r> :CtrlPMRU<CR>
         let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$|^\.',
             \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
         " On Windows use "dir" as fallback command.
