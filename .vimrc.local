@@ -180,3 +180,4 @@ endif
 
 nnoremap - :Switch<cr>
 map <C-F2> :NERDTreeFind<cr>
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
