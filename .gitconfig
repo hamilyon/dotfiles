@@ -2,7 +2,7 @@
         ui = true
 
 [user]
-	name = A.Shaposhnikov
+	name = Alexander Shaposhnikov <a.shaposhnikov@hh.ru>
 	email = a.shaposhnikov@hh.ru
 [core]
 	autocrlf = false
