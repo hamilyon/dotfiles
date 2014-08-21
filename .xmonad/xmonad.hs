@@ -18,7 +18,10 @@ module Main (main) where
     import XMonad.Layout.NoBorders
     import XMonad.Hooks.EwmhDesktops
 
-    myTerminal = "xfce4-terminal"
+    import XMonad.Hooks.DynamicLog
+    import XMonad.Hooks.ICCCMFocus
+
+    myTerminal = "gnome-terminal"
     main :: IO ()
     main = xmonad $ gnomeConfig { keys = newKeys
      , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
