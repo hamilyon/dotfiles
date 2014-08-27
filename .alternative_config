@@ -9,10 +9,8 @@
 
 
 remote-repo: hackage.haskell.org:http://hackage.haskell.org/packages/archive
-remote-repo-cache: /home/hamilyon/.cabal/packages
+remote-repo-cache: /home/ashaposhnikov/.cabal/packages
 -- local-repo:
--- logs-dir:
-world-file: /home/hamilyon/.cabal/world
 -- verbose: 1
 -- compiler: ghc
 -- with-compiler:
@@ -34,27 +32,20 @@ executable-profiling: True
 -- extra-include-dirs:
 -- extra-lib-dirs:
 -- constraint:
--- tests: False
 -- cabal-lib-version:
 -- preference:
 documentation: True
--- enable-documentation: True
--- doc-index-file: $datadir/doc/index.html
--- upgrade-dependencies:
--- only-dependencies:
+doc-index-file: $datadir/doc/index.html
 -- root-cmd:
 -- symlink-bindir:
-build-summary: /home/hamilyon/.cabal/logs/build.log
+build-summary: /home/ashaposhnikov/.cabal/logs/build.log
 -- build-log:
 remote-build-reporting: anonymous
--- one-shot:
--- username:
--- password:
 -- username:
 -- password:
 
 install-dirs user
-  -- prefix: /home/hamilyon/.cabal
+  -- prefix: /home/ashaposhnikov/.cabal
   -- bindir: $prefix/bin
   -- libdir: $prefix/lib
   -- libsubdir: $pkgid/$compiler

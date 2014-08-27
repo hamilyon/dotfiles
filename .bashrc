@@ -21,7 +21,7 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
@@ -36,7 +36,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+# force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -106,6 +106,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 shopt -s histappend
 export PROMPT_COMMAND="history -a"
 export PYTHONPATH="$PYTHONPATH:/home/ashaposhnikov/re/frontik/:/home/ashaposhnikov/re/hh.sites.common/"
+export PATH="$HOME/.cabal/bin:$PATH"
 
 function vanilla_vim {
     /usr/bin/vim $*
@@ -145,7 +146,11 @@ alias vim=v
 alias gvim=gv
 alias g=git
 alias ggs='git status'
-alias ggc='git commit'
 
 export PATH="$PWD/cabal-dev/bin:$HOME/.cabal/bin:$PATH"
+alias ggc='git checkout'
+alias j7o='JAVA_HOME=/usr/lib/jvm/java-7-oracle/'
+alias fn='find -name'
+
+alias ipythonv='python -c "import IPython.frontend.terminal.embed; IPython.frontend.terminal.embed.embed()"'
 

@@ -1,0 +1,24 @@
+[color]
+        ui = true
+
+[user]
+	name = Alexander Shaposhnikov <a.shaposhnikov@hh.ru>
+	email = a.shaposhnikov@hh.ru
+[core]
+	autocrlf = false
+[push]
+	default = tracking
+[rerere]
+	enabled = 1
+	autoupdate = true
+[github]
+	user = hamilyon
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
